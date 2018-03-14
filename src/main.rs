@@ -32,7 +32,7 @@ fn main() {
     let output = matches.value_of("OUTPUT").unwrap_or("output.jpg");
     let input = matches.value_of("INPUT").unwrap();
     let filter = matches.value_of("FILTER").unwrap();
-
+    // :bm, validate_filter_type defined in lib.rs
     let filter_type = match rustagram::validate_filter_type(filter, &filter_strings, &filters) {
         Ok(item) => item,
         Err(msg) => {

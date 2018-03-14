@@ -12,6 +12,7 @@ pub fn compute_final_alpha(fg: &[u8; 4], bg: &[u8; 4]) -> u8 {
 pub fn blend_screen(x1: u8, x2: u8) -> u8 {
     let x1: u16 = x1 as u16;
     let x2: u16 = x2 as u16;
+    //:bm,  wrapping_mul, 所有以 wrapping 开头的操作都不会造成类型计算溢出, 会在对应位置截断
     (255 - ((255 - x1).wrapping_mul(255 - x2)>>8)) as u8
 }
 
